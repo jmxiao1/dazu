@@ -66,7 +66,7 @@ bool hashigherpre(char op1, char op2) {//判断操作符优先级
 void infixtopostfix(char *infix, char *postfix) {//中缀转后缀
     int i = 0, j = 0;
     while (infix[i] != '\0') {
-        if (infix[i]!='+'&& infix[i] != '-'&& infix[i] != '*'&& infix[i] != '/') {
+        if (infix[i]!='+'&& infix[i] != '-'&& infix[i] != '*'&& infix[i] != '/'&& infix[i] != '('&& infix[i] != ')') {
             postfix[j++] = infix[i];//数字直接放入字符串
         }
         else if(infix[i]=='+'|| infix[i] == '-'|| infix[i] == '*'|| infix[i] == '/')
@@ -133,4 +133,5 @@ int main() {
     evaluatepostfix(postfix);//后缀求值
     cout << "结果为：";
     cout << Top() << endl;//   输出答案
+    system("pause");
 }
